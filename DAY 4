@@ -1,0 +1,14 @@
+//2729. Check if the Number is Fascinating 
+class Solution {
+    public boolean isFascinating(int n) {
+        String s = "" + n + (2 * n) + (3 * n);
+
+        for (char c = '1'; c <= '9'; c++) {
+            if (s.indexOf(c) == -1 || s.indexOf(c) != s.lastIndexOf(c)) {
+                return false;
+            }
+        }
+
+        return s.length() == 9;
+    }
+}
